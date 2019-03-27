@@ -1,0 +1,52 @@
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:georss="http://www.georss.org/georss">
+    <title>INGV - CNT - Locations</title>
+    <author>
+        <name>Istituto Nazionale di Geofisica e Vulcanologia</name>
+        <uri>http://www.ingv.it</uri>
+    </author>
+    <entry>
+        <id>
+            smi:webservices.ingv.it/fdsnws/event/1/query?eventId=1234
+        </id>
+        <title>
+            <![CDATA[
+2018-10-06 10:21:33 UTC - Magnitude(ML) 2.3 - 1 km NE Biancavilla (CT)
+]]>
+        </title>
+        <updated>2018-10-06T08:30:00+00:00</updated>
+        <summary>
+            <![CDATA[
+A magnitude ML 2.3 earthquake occured in the region: 1 km NE Biancavilla (CT) on 2018-10-06 10:21:33 UTC
+]]>
+        </summary>
+        <dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">
+            2018-10-06T08:00:00+00:00
+        </dc:date>
+        <geo:Point xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+            <geo:lat>37.654</geo:lat>
+            <geo:long>14.878</geo:long>
+        </geo:Point>
+        <georss:point>37.654 14.878</georss:point>
+    </entry>
+    <entry>
+        <id>
+            smi:webservices.ingv.it/fdsnws/event/1/query?eventId=2345
+        </id>
+        <title>
+            <![CDATA[
+2018-10-06 09:14:11 UTC - Magnitude(ML) 0.7 - 1 km NE Norcia (PG)
+]]>
+        </title>
+        <summary>
+            <![CDATA[
+A magnitude ML 0.7 earthquake occured in the region: 1 km NE Norcia (PG) on 2018-10-06 09:14:11 UTC
+]]>
+        </summary>
+        <geo:Point xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+            <geo:lat>42.7995</geo:lat>
+            <geo:long>13.102</geo:long>
+        </geo:Point>
+        <georss:point>42.7995 13.102</georss:point>
+    </entry>
+</feed>
