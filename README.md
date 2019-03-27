@@ -1,5 +1,4 @@
 # python-georss-ingv-centro-nazionale-terremoti-client
-Library for convenient access to the INGV Centro Nazionale Terremoti (Earthquakes) feed.
 
 [![Build Status](https://travis-ci.org/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client.svg)](https://travis-ci.org/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client)
 [![Coverage Status](https://coveralls.io/repos/github/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client/badge.svg?branch=master)](https://coveralls.io/github/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client?branch=master)
