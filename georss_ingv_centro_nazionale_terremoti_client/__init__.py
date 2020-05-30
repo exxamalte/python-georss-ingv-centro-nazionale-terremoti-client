@@ -15,7 +15,7 @@ REGEXP_ATTR_MAGNITUDE = r'Magnitude\(M.{{0,3}}\) (?P<{}>[^ ]+) '\
     .format(CUSTOM_ATTRIBUTE)
 REGEXP_ATTR_REGION = r'Magnitude\(M.{{0,3}}\) [^ ]+[ ]+-[ ]+(?P<{}>.+)$'\
     .format(CUSTOM_ATTRIBUTE)
-REGEXP_ATTR_SHORT_ID = r'eventId=(?P<{}>\d+)$'\
+REGEXP_ATTR_EVENT_ID = r'eventId=(?P<{}>\d+)$'\
     .format(CUSTOM_ATTRIBUTE)
 
 URL = "http://cnt.rm.ingv.it/feed/atom/all_week"
@@ -97,13 +97,13 @@ class IngvCentroNazionaleTerremotiFeedEntry(FeedEntry):
         return self._search_in_title(REGEXP_ATTR_REGION)
     
     @property
-    def short_id(self) -> Optional[int]:
+    def event_id(self) -> Optional[int]:
         """Return the short id of this entry."""
-        return self._search_in_external_id(REGEXP_ATTR_SHORT_ID)
+        return self._search_in_external_id(REGEXP_ATTR_EVENT_ID)
 
     @property
     def image_url(self) -> Optional[str]:
         """Return the image url of this entry."""
-        if self.short_id and self.magnitude >= 3:
-            return IMAGE_URL_PATTERN.format(self.short_id) 
+        if self.event_id and self.magnitude >= 3:
+            return IMAGE_URL_PATTERN.format(self.event_id) 
         return None
