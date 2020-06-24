@@ -98,7 +98,7 @@ class IngvCentroNazionaleTerremotiFeedEntry(FeedEntry):
     
     @property
     def event_id(self) -> Optional[int]:
-        """Return the short id of this entry."""
+        """Return the event id of this entry."""
         return self._search_in_external_id(REGEXP_ATTR_EVENT_ID)
 
     @property
