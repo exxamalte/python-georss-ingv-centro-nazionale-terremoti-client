@@ -5,7 +5,9 @@ from unittest import mock
 
 from georss_client import UPDATE_OK
 from georss_ingv_centro_nazionale_terremoti_client import \
-    IngvCentroNazionaleTerremotiFeed, IngvCentroNazionaleTerremotiFeedManager
+    IngvCentroNazionaleTerremotiFeed
+from georss_ingv_centro_nazionale_terremoti_client.feed_manager import \
+    IngvCentroNazionaleTerremotiFeedManager
 from tests import load_fixture
 
 HOME_COORDINATES = (40.84, 14.25)
@@ -64,7 +66,8 @@ class TestIngvCentroNazionaleTerremotiFeed(unittest.TestCase):
 
         feed_entry = entries[2]
         assert feed_entry.event_id == 3456
-        assert feed_entry.image_url == "http://shakemap.rm.ingv.it/shake/3456/download/intensity.jpg"
+        assert feed_entry.image_url == "http://shakemap.rm.ingv.it/" \
+                                       "shake/3456/download/intensity.jpg"
 
     @mock.patch("requests.Request")
     @mock.patch("requests.Session")
