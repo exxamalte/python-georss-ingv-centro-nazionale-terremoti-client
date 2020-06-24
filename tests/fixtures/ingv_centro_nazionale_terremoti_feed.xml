@@ -49,4 +49,24 @@ A magnitude ML 0.7 earthquake occured in the region: 1 km NE Norcia (PG) on 2018
         </geo:Point>
         <georss:point>42.7995 13.102</georss:point>
     </entry>
+    <entry>
+        <id>
+            smi:webservices.ingv.it/fdsnws/event/1/query?eventId=3456
+        </id>
+        <title>
+            <![CDATA[
+2018-10-06 09:14:11 UTC - Magnitude(ML) 3.5 - 1 km NE Norcia (PG)
+]]>
+        </title>
+        <summary>
+            <![CDATA[
+A magnitude ML 3.5 earthquake occured in the region: 1 km NE Norcia (PG) on 2018-10-06 09:14:11 UTC
+]]>
+        </summary>
+        <geo:Point xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+            <geo:lat>42.7995</geo:lat>
+            <geo:long>13.102</geo:long>
+        </geo:Point>
+        <georss:point>42.7995 13.102</georss:point>
+    </entry>
 </feed>
