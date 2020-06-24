@@ -32,13 +32,15 @@ class TestIngvCentroNazionaleTerremotiFeed(unittest.TestCase):
         status, entries = feed.update()
         assert status == UPDATE_OK
         self.assertIsNotNone(entries)
-        assert len(entries) == 2
+        assert len(entries) == 3
 
         feed_entry = entries[0]
         assert feed_entry.title == "2018-10-06 10:21:33 UTC - Magnitude(ML)" \
                                    " 2.3 - 1 km NE Biancavilla (CT)"
         assert feed_entry.external_id == "smi:webservices.ingv.it/fdsnws/" \
                                          "event/1/query?eventId=1234"
+        assert feed_entry.event_id == 1234
+        assert feed_entry.image_url is None
         assert feed_entry.coordinates == (37.654, 14.878)
         self.assertAlmostEqual(feed_entry.distance_to_home, 358.4, 1)
         assert feed_entry.published \
@@ -60,6 +62,10 @@ class TestIngvCentroNazionaleTerremotiFeed(unittest.TestCase):
                                    " 0.7 - 1 km NE Norcia (PG)"
         self.assertIsNone(feed_entry.published)
 
+        feed_entry = entries[2]
+        assert feed_entry.event_id == 3456
+        assert feed_entry.image_url == "http://shakemap.rm.ingv.it/shake/3456/download/intensity.jpg"
+
     @mock.patch("requests.Request")
     @mock.patch("requests.Session")
     def test_update_ok_with_category(self, mock_session, mock_request):
@@ -75,7 +81,7 @@ class TestIngvCentroNazionaleTerremotiFeed(unittest.TestCase):
         status, entries = feed.update()
         assert status == UPDATE_OK
         self.assertIsNotNone(entries)
-        assert len(entries) == 1
+        assert len(entries) == 2
 
         feed_entry = entries[0]
         assert feed_entry.title == "2018-10-06 10:21:33 UTC - Magnitude(ML)" \
@@ -125,10 +131,10 @@ class TestIngvCentroNazionaleTerremotiFeed(unittest.TestCase):
         feed_manager.update()
         entries = feed_manager.feed_entries
         self.assertIsNotNone(entries)
-        assert len(entries) == 2
+        assert len(entries) == 3
         assert feed_manager.last_timestamp \
             == datetime.datetime(2018, 10, 6, 8, 0,
                                  tzinfo=datetime.timezone.utc)
-        assert len(generated_entity_external_ids) == 2
+        assert len(generated_entity_external_ids) == 3
         assert len(updated_entity_external_ids) == 0
         assert len(removed_entity_external_ids) == 0

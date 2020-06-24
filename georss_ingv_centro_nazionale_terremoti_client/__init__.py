@@ -9,9 +9,13 @@ from georss_client import GeoRssFeed, FeedEntry
 from georss_client.consts import CUSTOM_ATTRIBUTE, ATTR_ATTRIBUTION
 from georss_client.feed_manager import FeedManagerBase
 
+IMAGE_URL_PATTERN = "http://shakemap.rm.ingv.it/shake/{}/download/intensity.jpg"
+
 REGEXP_ATTR_MAGNITUDE = r'Magnitude\(M.{{0,3}}\) (?P<{}>[^ ]+) '\
     .format(CUSTOM_ATTRIBUTE)
 REGEXP_ATTR_REGION = r'Magnitude\(M.{{0,3}}\) [^ ]+[ ]+-[ ]+(?P<{}>.+)$'\
+    .format(CUSTOM_ATTRIBUTE)
+REGEXP_ATTR_EVENT_ID = r'eventId=(?P<{}>\d+)$'\
     .format(CUSTOM_ATTRIBUTE)
 
 URL = "http://cnt.rm.ingv.it/feed/atom/all_week"
@@ -91,3 +95,18 @@ class IngvCentroNazionaleTerremotiFeedEntry(FeedEntry):
     def region(self) -> Optional[float]:
         """Return the region of this entry."""
         return self._search_in_title(REGEXP_ATTR_REGION)
+    
+    @property
+    def event_id(self) -> Optional[int]:
+        """Return the event id of this entry."""
+        event_id = self._search_in_external_id(REGEXP_ATTR_EVENT_ID)
+        if event_id:
+            return int(event_id)
+        return None
+
+    @property
+    def image_url(self) -> Optional[str]:
+        """Return the image url of this entry."""
+        if self.event_id and self.magnitude >= 3:
+            return IMAGE_URL_PATTERN.format(self.event_id) 
+        return None
