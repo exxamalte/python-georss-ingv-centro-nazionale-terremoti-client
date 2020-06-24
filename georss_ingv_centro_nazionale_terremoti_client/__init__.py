@@ -99,7 +99,10 @@ class IngvCentroNazionaleTerremotiFeedEntry(FeedEntry):
     @property
     def event_id(self) -> Optional[int]:
         """Return the event id of this entry."""
-        return self._search_in_external_id(REGEXP_ATTR_EVENT_ID)
+        event_id = self._search_in_external_id(REGEXP_ATTR_EVENT_ID)
+        if event_id:
+            return int(event_id)
+        return None
 
     @property
     def image_url(self) -> Optional[str]:
