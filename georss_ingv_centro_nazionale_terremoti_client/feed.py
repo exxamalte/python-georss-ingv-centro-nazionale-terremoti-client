@@ -1,4 +1,6 @@
 """INGV Centro Nazionale Terremoti (Earthquakes) feed."""
+from typing import Tuple
+
 from georss_client import GeoRssFeed, ATTR_ATTRIBUTION
 
 from .consts import URL
@@ -8,8 +10,10 @@ from .feed_entry import IngvCentroNazionaleTerremotiFeedEntry
 class IngvCentroNazionaleTerremotiFeed(GeoRssFeed):
     """INGV Centro Nazionale Terremoti feed."""
 
-    def __init__(self, home_coordinates, filter_radius=None,
-                 filter_minimum_magnitude=None):
+    def __init__(self,
+                 home_coordinates: Tuple[float, float],
+                 filter_radius: float = None,
+                 filter_minimum_magnitude: float = None):
         """Initialise this service."""
         super().__init__(home_coordinates, URL, filter_radius=filter_radius)
         self._filter_minimum_magnitude = filter_minimum_magnitude

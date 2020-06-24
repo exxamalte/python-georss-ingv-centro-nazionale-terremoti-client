@@ -1,5 +1,5 @@
 """INGV Centro Nazionale Terremoti (Earthquakes) feed entry."""
-from typing import Optional
+from typing import Optional, Tuple
 
 from georss_client import FeedEntry
 
@@ -11,7 +11,10 @@ from .consts import \
 class IngvCentroNazionaleTerremotiFeedEntry(FeedEntry):
     """INGV Centro Nazionale Terremoti feed entry."""
 
-    def __init__(self, home_coordinates, rss_entry, attribution):
+    def __init__(self,
+                 home_coordinates: Tuple[float, float],
+                 rss_entry,
+                 attribution):
         """Initialise this service."""
         super().__init__(home_coordinates, rss_entry)
         self._attribution = attribution
