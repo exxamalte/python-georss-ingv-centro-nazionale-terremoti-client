@@ -1,3 +1,5 @@
+import os
+
 from setuptools import setup, find_packages
 
 NAME = "georss_ingv_centro_nazionale_terremoti_client"
@@ -6,16 +8,22 @@ AUTHOR_EMAIL = "coding@subspace.de"
 DESCRIPTION = "A GeoRSS client library for the INGV Centro Nazionale Terremoti (Earthquakes) feed."
 URL = "https://github.com/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client"
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
-
 REQUIRES = [
     'georss_client>=0.8',
 ]
 
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+HERE = os.path.abspath(os.path.dirname(__file__))
+VERSION = {}
+with open(os.path.join(HERE, NAME, "__version__.py")) as f:
+    exec(f.read(), VERSION)  # pylint: disable=exec-used
+
 setup(
     name=NAME,
-    version="0.1",
+    version=VERSION["__version__"],
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     description=DESCRIPTION,
