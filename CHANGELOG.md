@@ -1,5 +1,8 @@
 # Changes
 
+## 0.3 (20/10/2020)
+* Excluded tests from package.
+
 ## 0.2 (25/06/2020)
 * Added event id and image url (thanks @caiosweet).
 * Code restructure and clean-up
