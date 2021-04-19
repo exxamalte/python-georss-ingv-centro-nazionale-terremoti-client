@@ -67,7 +67,7 @@ class TestIngvCentroNazionaleTerremotiFeed(unittest.TestCase):
         feed_entry = entries[2]
         assert feed_entry.event_id == 3456
         assert feed_entry.image_url == "http://shakemap.rm.ingv.it/" \
-                                       "shake/3456/download/intensity.jpg"
+                                       "shake4/data/3456/current/products/intensity.jpg"
 
     @mock.patch("requests.Request")
     @mock.patch("requests.Session")
