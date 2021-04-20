@@ -16,7 +16,11 @@ matrix:
       sudo: true
     - python: "3.8"
       env: TOXENV=py38
-      dist: xenial
+      dist: bionic
+      sudo: true
+    - python: "3.9"
+      env: TOXENV=py39
+      dist: bionic
       sudo: true
 
 install: pip install -U tox coveralls
