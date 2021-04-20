@@ -9,7 +9,7 @@ DESCRIPTION = "A GeoRSS client library for the INGV Centro Nazionale Terremoti (
 URL = "https://github.com/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client"
 
 REQUIRES = [
-    'georss_client>=0.10',
+    'georss_client>=0.13',
 ]
 
 
