@@ -1,7 +1,7 @@
 """INGV Centro Nazionale Terremoti (Earthquakes) consts."""
 from georss_client import CUSTOM_ATTRIBUTE
 
-IMAGE_URL_PATTERN = "http://shakemap.rm.ingv.it/shake/{}/download/intensity.jpg"
+IMAGE_URL_PATTERN = "http://shakemap.rm.ingv.it/shake4/data/{}/current/products/intensity.jpg"
 
 REGEXP_ATTR_MAGNITUDE = r'Magnitude\(M.{{0,3}}\) (?P<{}>[^ ]+) '\
     .format(CUSTOM_ATTRIBUTE)
