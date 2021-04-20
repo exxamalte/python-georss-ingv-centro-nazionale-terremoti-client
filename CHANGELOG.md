@@ -1,5 +1,10 @@
 # Changes
 
+## 0.4 (20/04/2021)
+* Fixed image URLs by supporting new pattern (thanks @caiosweet).
+* Using version 0.13 of upstream [python-georss-client](https://github.com/exxamalte/python-georss-client) library.
+* Python 3.9 support.
+
 ## 0.3 (20/10/2020)
 * Excluded tests from package.
 
