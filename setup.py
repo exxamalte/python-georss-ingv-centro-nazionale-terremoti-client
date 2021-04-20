@@ -9,7 +9,7 @@ DESCRIPTION = "A GeoRSS client library for the INGV Centro Nazionale Terremoti (
 URL = "https://github.com/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client"
 
 REQUIRES = [
-    'georss_client>=0.10',
+    'georss_client>=0.13',
 ]
 
 
@@ -35,6 +35,7 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
     ],
