@@ -27,6 +27,7 @@ setup(
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     description=DESCRIPTION,
+    license="Apache-2.0",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url=URL,
