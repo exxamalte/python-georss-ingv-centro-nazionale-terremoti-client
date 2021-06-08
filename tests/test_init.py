@@ -4,6 +4,7 @@ import unittest
 from unittest import mock
 
 from georss_client import UPDATE_OK
+
 from georss_ingv_centro_nazionale_terremoti_client import (
     IngvCentroNazionaleTerremotiFeed,
 )

@@ -1,7 +1,7 @@
 """INGV Centro Nazionale Terremoti (Earthquakes) feed."""
 from typing import Tuple
 
-from georss_client import GeoRssFeed, ATTR_ATTRIBUTION
+from georss_client import ATTR_ATTRIBUTION, GeoRssFeed
 
 from .consts import URL
 from .feed_entry import IngvCentroNazionaleTerremotiFeedEntry
