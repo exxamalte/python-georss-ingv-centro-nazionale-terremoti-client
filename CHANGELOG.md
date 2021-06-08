@@ -1,5 +1,10 @@
 # Changes
 
+## 0.5 (08/06/2021)
+* Add license tag (thanks @fabaff).
+* Using version 0.14 of upstream [python-georss-client](https://github.com/exxamalte/python-georss-client) library.
+* General code improvements.
+
 ## 0.4 (20/04/2021)
 * Fixed image URLs by supporting new pattern (thanks @caiosweet).
 * Using version 0.13 of upstream [python-georss-client](https://github.com/exxamalte/python-georss-client) library.
