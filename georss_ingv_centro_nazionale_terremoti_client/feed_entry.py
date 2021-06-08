@@ -3,18 +3,18 @@ from typing import Optional, Tuple
 
 from georss_client import FeedEntry
 
-from .consts import \
-    IMAGE_URL_PATTERN, REGEXP_ATTR_MAGNITUDE, REGEXP_ATTR_REGION, \
-    REGEXP_ATTR_EVENT_ID
+from .consts import (
+    IMAGE_URL_PATTERN,
+    REGEXP_ATTR_MAGNITUDE,
+    REGEXP_ATTR_REGION,
+    REGEXP_ATTR_EVENT_ID,
+)
 
 
 class IngvCentroNazionaleTerremotiFeedEntry(FeedEntry):
     """INGV Centro Nazionale Terremoti feed entry."""
 
-    def __init__(self,
-                 home_coordinates: Tuple[float, float],
-                 rss_entry,
-                 attribution):
+    def __init__(self, home_coordinates: Tuple[float, float], rss_entry, attribution):
         """Initialise this service."""
         super().__init__(home_coordinates, rss_entry)
         self._attribution = attribution
