@@ -1,2 +1,6 @@
 [tool.black]
 target-version = ['py36', 'py37', 'py38']
+
+[tool.isort]
+profile = "black"
+src_paths = ["georss_ingv_centro_nazionale_terremoti_client", "tests"]

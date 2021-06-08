@@ -5,9 +5,9 @@ from georss_client import FeedEntry
 
 from .consts import (
     IMAGE_URL_PATTERN,
+    REGEXP_ATTR_EVENT_ID,
     REGEXP_ATTR_MAGNITUDE,
     REGEXP_ATTR_REGION,
-    REGEXP_ATTR_EVENT_ID,
 )
 
 
