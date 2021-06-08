@@ -6,10 +6,12 @@ NAME = "georss_ingv_centro_nazionale_terremoti_client"
 AUTHOR = "Malte Franken"
 AUTHOR_EMAIL = "coding@subspace.de"
 DESCRIPTION = "A GeoRSS client library for the INGV Centro Nazionale Terremoti (Earthquakes) feed."
-URL = "https://github.com/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client"
+URL = (
+    "https://github.com/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client"
+)
 
 REQUIRES = [
-    'georss_client>=0.14',
+    "georss_client>=0.14",
 ]
 
 
@@ -40,5 +42,5 @@ setup(
         "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
     ],
-    install_requires=REQUIRES
+    install_requires=REQUIRES,
 )
