@@ -1,6 +1,6 @@
 # python-georss-ingv-centro-nazionale-terremoti-client
 
-[![Build Status](https://github.com/exxamalte/python-georss-ingv-centro-nazionale-terremoti-clientworkflows/CI/badge.svg?branch=master)](https://github.com/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client/actions?workflow=CI)
+[![Build Status](https://github.com/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client/workflows/CI/badge.svg?branch=master)](https://github.com/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client/actions?workflow=CI)
 [![codecov](https://codecov.io/gh/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client/branch/master/graph/badge.svg?token=PHASSFXFVU)](https://codecov.io/gh/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client)
 [![PyPi](https://img.shields.io/pypi/v/georss-ingv-centro-nazionale-terremoti-client.svg)](https://pypi.python.org/pypi/georss-ingv-centro-nazionale-terremoti-client)
 [![Version](https://img.shields.io/pypi/pyversions/georss-ingv-centro-nazionale-terremoti-client.svg)](https://pypi.python.org/pypi/georss-ingv-centro-nazionale-terremoti-client)
