@@ -1,6 +1,6 @@
 import os
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 NAME = "georss_ingv_centro_nazionale_terremoti_client"
 AUTHOR = "Malte Franken"
@@ -35,7 +35,6 @@ setup(
     url=URL,
     packages=find_packages(exclude=("tests*",)),
     classifiers=[
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
