@@ -1,0 +1,1 @@
+georss_client>=0.15
