@@ -1,5 +1,5 @@
 """INGV Centro Nazionale Terremoti (Earthquakes) feed."""
-from typing import Tuple
+from __future__ import annotations
 
 from georss_client import ATTR_ATTRIBUTION, GeoRssFeed
 
@@ -12,7 +12,7 @@ class IngvCentroNazionaleTerremotiFeed(GeoRssFeed):
 
     def __init__(
         self,
-        home_coordinates: Tuple[float, float],
+        home_coordinates: tuple[float, float],
         filter_radius: float = None,
         filter_minimum_magnitude: float = None,
     ):

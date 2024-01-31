@@ -1,5 +1,5 @@
 """INGV Centro Nazionale Terremoti (Earthquakes) feed entry."""
-from typing import Optional, Tuple
+from __future__ import annotations
 
 from georss_client import FeedEntry
 
@@ -14,7 +14,7 @@ from .consts import (
 class IngvCentroNazionaleTerremotiFeedEntry(FeedEntry):
     """INGV Centro Nazionale Terremoti feed entry."""
 
-    def __init__(self, home_coordinates: Tuple[float, float], rss_entry, attribution):
+    def __init__(self, home_coordinates: tuple[float, float], rss_entry, attribution):
         """Initialise this service."""
         super().__init__(home_coordinates, rss_entry)
         self._attribution = attribution
@@ -25,7 +25,7 @@ class IngvCentroNazionaleTerremotiFeedEntry(FeedEntry):
         return self._attribution
 
     @property
-    def magnitude(self) -> Optional[float]:
+    def magnitude(self) -> float | None:
         """Return the magnitude of this entry."""
         magnitude = self._search_in_title(REGEXP_ATTR_MAGNITUDE)
         if magnitude:
@@ -33,12 +33,12 @@ class IngvCentroNazionaleTerremotiFeedEntry(FeedEntry):
         return magnitude
 
     @property
-    def region(self) -> Optional[float]:
+    def region(self) -> float | None:
         """Return the region of this entry."""
         return self._search_in_title(REGEXP_ATTR_REGION)
 
     @property
-    def event_id(self) -> Optional[int]:
+    def event_id(self) -> int | None:
         """Return the event id of this entry."""
         event_id = self._search_in_external_id(REGEXP_ATTR_EVENT_ID)
         if event_id:
@@ -46,7 +46,7 @@ class IngvCentroNazionaleTerremotiFeedEntry(FeedEntry):
         return None
 
     @property
-    def image_url(self) -> Optional[str]:
+    def image_url(self) -> str | None:
         """Return the image url of this entry."""
         if self.event_id and self.magnitude >= 3:
             return IMAGE_URL_PATTERN.format(self.event_id)
