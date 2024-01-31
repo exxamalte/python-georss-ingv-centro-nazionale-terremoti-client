@@ -43,3 +43,8 @@ ignore = [
     # Ignored due to performance: https://github.com/charliermarsh/ruff/issues/2923
     "UP038", # Use `X | Y` in `isinstance` call instead of `(X, Y)`
 ]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
