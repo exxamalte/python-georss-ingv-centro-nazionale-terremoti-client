@@ -12,7 +12,7 @@ URL = (
 )
 
 REQUIRES = [
-    "georss_client>=0.15",
+    "georss_client>=0.17",
 ]
 
 
