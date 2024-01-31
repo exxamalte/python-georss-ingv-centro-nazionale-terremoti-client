@@ -12,7 +12,7 @@ jobs:
     name: Python ${{ matrix.python-version }}
     runs-on: ubuntu-latest
     env:
-      USING_COVERAGE: '3.8'
+      USING_COVERAGE: '3.10'
     strategy:
       fail-fast: true
       matrix:
@@ -28,13 +28,23 @@ jobs:
           python -VV
           python -m site
           python -m pip install --upgrade pip setuptools wheel
-          python -m pip install --upgrade coverage[toml] virtualenv tox tox-gh-actions
-      - name: "Run tox targets for ${{ matrix.python-version }}"
-        run: "python -m tox"
-      - name: "Combine coverage"
-        if: "contains(env.USING_COVERAGE, matrix.python-version)"
+          python -m pip install -r requirements.txt
+          python -m pip install -r requirements-test.txt
+      - name: "Run tests for ${{ matrix.python-version }}"
         run: |
           set -xe
+          pip install pytest-cov
+          pip install coverage
+          pytest \
+            -qq \
+            --timeout=9 \
+            --durations=10 \
+            -n auto \
+            --cov georss_ingv_centro_nazionale_terremoti_client \
+            --cov-report xml \
+            -o console_output_style=count \
+            -p no:sugar \
+            tests
           python -m coverage xml
       - name: "Upload coverage to Codecov"
         if: "contains(env.USING_COVERAGE, matrix.python-version)"
