@@ -1,6 +1,4 @@
 """INGV Centro Nazionale Terremoti (Earthquakes) feed manager."""
-from typing import Tuple
-
 from georss_client.feed_manager import FeedManagerBase
 
 from .feed import IngvCentroNazionaleTerremotiFeed
@@ -14,7 +12,7 @@ class IngvCentroNazionaleTerremotiFeedManager(FeedManagerBase):
         generate_callback,
         update_callback,
         remove_callback,
-        coordinates: Tuple[float, float],
+        coordinates: tuple[float, float],
         filter_radius: float = None,
         filter_minimum_magnitude: float = None,
     ):
