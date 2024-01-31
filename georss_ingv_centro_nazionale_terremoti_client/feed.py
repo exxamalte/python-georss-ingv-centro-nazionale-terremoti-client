@@ -1,4 +1,6 @@
 """INGV Centro Nazionale Terremoti (Earthquakes) feed."""
+from __future__ import annotations
+
 from georss_client import ATTR_ATTRIBUTION, GeoRssFeed
 
 from .consts import URL
