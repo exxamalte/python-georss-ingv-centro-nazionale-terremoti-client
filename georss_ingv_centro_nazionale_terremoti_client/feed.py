@@ -1,4 +1,5 @@
 """INGV Centro Nazionale Terremoti (Earthquakes) feed."""
+
 from __future__ import annotations
 
 from georss_client import ATTR_ATTRIBUTION, GeoRssFeed
@@ -13,8 +14,8 @@ class IngvCentroNazionaleTerremotiFeed(GeoRssFeed):
     def __init__(
         self,
         home_coordinates: tuple[float, float],
-        filter_radius: float = None,
-        filter_minimum_magnitude: float = None,
+        filter_radius: float | None = None,
+        filter_minimum_magnitude: float | None = None,
     ):
         """Initialise this service."""
         super().__init__(home_coordinates, URL, filter_radius=filter_radius)
@@ -22,13 +23,7 @@ class IngvCentroNazionaleTerremotiFeed(GeoRssFeed):
 
     def __repr__(self):
         """Return string representation of this feed."""
-        return "<{}(home={}, url={}, radius={}, magnitude={})>".format(
-            self.__class__.__name__,
-            self._home_coordinates,
-            self._url,
-            self._filter_radius,
-            self._filter_minimum_magnitude,
-        )
+        return f"<{self.__class__.__name__}(home={self._home_coordinates}, url={self._url}, radius={self._filter_radius}, magnitude={self._filter_minimum_magnitude})>"
 
     def _new_entry(self, home_coordinates, rss_entry, global_data):
         """Generate a new entry."""
