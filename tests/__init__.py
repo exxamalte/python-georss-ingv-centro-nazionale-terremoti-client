@@ -1,4 +1,5 @@
 """Tests for georss-ingv-centro-nazionale-terremoti-client library."""
+
 import os
 
 

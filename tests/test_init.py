@@ -1,4 +1,5 @@
 """Test for the INGV Centro Nazionale Terremoti feed."""
+
 import datetime
 import unittest
 from unittest import mock
@@ -37,7 +38,7 @@ class TestIngvCentroNazionaleTerremotiFeed(unittest.TestCase):
         )
         status, entries = feed.update()
         assert status == UPDATE_OK
-        self.assertIsNotNone(entries)
+        assert entries is not None
         assert len(entries) == 3
 
         feed_entry = entries[0]
@@ -52,7 +53,7 @@ class TestIngvCentroNazionaleTerremotiFeed(unittest.TestCase):
         assert feed_entry.event_id == 1234
         assert feed_entry.image_url is None
         assert feed_entry.coordinates == (37.654, 14.878)
-        self.assertAlmostEqual(feed_entry.distance_to_home, 358.4, 1)
+        assert round(abs(feed_entry.distance_to_home - 358.4), 1) == 0
         assert feed_entry.published == datetime.datetime(
             2018, 10, 6, 8, 0, tzinfo=datetime.timezone.utc
         )
@@ -76,7 +77,7 @@ class TestIngvCentroNazionaleTerremotiFeed(unittest.TestCase):
             feed_entry.title == "2018-10-06 09:14:11 UTC - Magnitude(ML)"
             " 0.7 - 1 km NE Norcia (PG)"
         )
-        self.assertIsNone(feed_entry.published)
+        assert feed_entry.published is None
 
         feed_entry = entries[2]
         assert feed_entry.event_id == 3456
@@ -99,7 +100,7 @@ class TestIngvCentroNazionaleTerremotiFeed(unittest.TestCase):
         )
         status, entries = feed.update()
         assert status == UPDATE_OK
-        self.assertIsNotNone(entries)
+        assert entries is not None
         assert len(entries) == 2
 
         feed_entry = entries[0]
@@ -152,7 +153,7 @@ class TestIngvCentroNazionaleTerremotiFeed(unittest.TestCase):
         )
         feed_manager.update()
         entries = feed_manager.feed_entries
-        self.assertIsNotNone(entries)
+        assert entries is not None
         assert len(entries) == 3
         assert feed_manager.last_timestamp == datetime.datetime(
             2018, 10, 6, 8, 0, tzinfo=datetime.timezone.utc
