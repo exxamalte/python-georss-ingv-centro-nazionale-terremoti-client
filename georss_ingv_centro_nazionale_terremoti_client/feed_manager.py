@@ -1,4 +1,5 @@
 """INGV Centro Nazionale Terremoti (Earthquakes) feed manager."""
+
 from __future__ import annotations
 
 from georss_client.feed_manager import FeedManagerBase
@@ -15,8 +16,8 @@ class IngvCentroNazionaleTerremotiFeedManager(FeedManagerBase):
         update_callback,
         remove_callback,
         coordinates: tuple[float, float],
-        filter_radius: float = None,
-        filter_minimum_magnitude: float = None,
+        filter_radius: float | None = None,
+        filter_minimum_magnitude: float | None = None,
     ):
         """Initialize the INGV Centro Nazionale Terremoti Feed Manager."""
         feed = IngvCentroNazionaleTerremotiFeed(
