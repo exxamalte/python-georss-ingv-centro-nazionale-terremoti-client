@@ -1,7 +1,8 @@
 """Setup of georss_ingv_centro_nazionale_terremoti_client library."""
-import os
 
 from setuptools import find_packages, setup
+
+from georss_ingv_centro_nazionale_terremoti_client.__version__ import __version__
 
 NAME = "georss_ingv_centro_nazionale_terremoti_client"
 AUTHOR = "Malte Franken"
@@ -19,14 +20,9 @@ REQUIRES = [
 with open("README.md") as fh:
     long_description = fh.read()
 
-HERE = os.path.abspath(os.path.dirname(__file__))
-VERSION = {}
-with open(os.path.join(HERE, NAME, "__version__.py")) as f:
-    exec(f.read(), VERSION)  # pylint: disable=exec-used
-
 setup(
     name=NAME,
-    version=VERSION["__version__"],
+    version=__version__,
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     description=DESCRIPTION,
