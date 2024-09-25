@@ -1,2 +1,3 @@
 comment: false
-
+ignore:
+  - "**/__version__.py"
