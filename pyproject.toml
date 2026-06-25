@@ -1,3 +1,47 @@
+[build-system]
+requires = [
+    "setuptools",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "georss_ingv_centro_nazionale_terremoti_client"
+version  = "0.7"
+requires-python = ">= 3.11"
+authors = [
+  {name = "Malte Franken", email = "coding@subspace.de"},
+]
+description = "A GeoRSS client library for the INGV Centro Nazionale Terremoti (Earthquakes) feed."
+readme = "README.md"
+license = "Apache-2.0"
+keywords = ["homeassistant", "georss", "ingv", "earthquakes"]
+classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+  "Development Status :: 5 - Production/Stable",
+]
+dependencies = [
+    "georss_client>=2026.6.1",
+]
+
+[project.optional-dependencies]
+tests = [
+    "pytest",
+    "pytest-timeout",
+    "pytest-xdist",
+    "pytest-cov",
+]
+
+[project.urls]
+Repository = "https://github.com/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client"
+Issues = "https://github.com/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client/issues"
+Changelog = "https://github.com/exxamalte/python-georss-ingv-centro-nazionale-terremoti-client/blob/master/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+include = ["georss_ingv_centro_nazionale_terremoti_client*"]
+
 [tool.ruff.lint]
 select = [
     "A001", # Variable {name} is shadowing a Python builtin
