@@ -1,5 +1,16 @@
 # Changes
 
+## 2026.6.0 (25/06/2026)
+* Removed Python 3.8 support.
+* Removed Python 3.9 support.
+* Removed Python 3.10 support.
+* Added Python 3.13 support.
+* Added Python 3.14 support.
+* Bump georss_client to 2026.6.1
+* Bump ruff to 0.15.19
+* Code quality improvements.
+* Changing to date-based versioning
+
 ## 0.7 (31/01/2024)
 * Removed Python 3.7 support.
 * Added Python 3.11 support.
