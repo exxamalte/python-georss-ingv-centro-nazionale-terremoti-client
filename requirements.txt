@@ -1,1 +1,0 @@
-georss_client>=2026.6.1

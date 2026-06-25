@@ -1,4 +1,0 @@
-pytest
-pytest-timeout
-pytest-xdist
-pytest-cov

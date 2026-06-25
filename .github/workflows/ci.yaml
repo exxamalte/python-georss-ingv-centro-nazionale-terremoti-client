@@ -28,13 +28,11 @@ jobs:
           python -VV
           python -m site
           python -m pip install --upgrade pip setuptools wheel
-          python -m pip install -r requirements.txt
-          python -m pip install -r requirements-test.txt
+          python -m pip install -e .
+          python -m pip install -e .[tests]
       - name: "Run tests for ${{ matrix.python-version }}"
         run: |
           set -xe
-          pip install pytest-cov
-          pip install coverage
           pytest \
             -qq \
             --timeout=9 \
